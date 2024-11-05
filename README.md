@@ -89,8 +89,6 @@ This can be also done with `Bash IDE` extension, but when I used it, it was not 
 "shellcheck.customArgs": [
     "--external-sources"
 ],
-// Reduce CPU usage - we will use autosave anyway
-"shellcheck.run": "onSave",
 ```
 
 ### 3.5. [shell-format](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format)
@@ -153,6 +151,14 @@ More snippets.
 Useful to sort `source` commands.
 
 TODO: This can be implemented automatically with script in `File Watcher` extension.
+
+### 3.12. [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+To show error messages inline. I disable showing errors for all lines except current - found that more useful (otherwise, for example, after some missed quotation mark, errors will fill all the lines to the end of the file):
+
+```json
+"errorLens.followCursor": "activeLine",
+```
 
 ## 3. (Optional) Install and configure extra extensions
 
