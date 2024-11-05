@@ -4,7 +4,7 @@
     // ========================================
     // Follow redirection operators with a space (more readable)
     "bashIde.shfmt.spaceRedirects": true,
-    // Increase number of files to analize (analize them all to not miss any reference to show)
+    // Increase number of files to analyze (analyze them all to not miss any reference to show)
     "bashIde.backgroundAnalysisMaxFiles": 9999,
     // Decrease logging level
     "bashIde.logLevel": "warning",

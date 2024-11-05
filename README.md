@@ -36,7 +36,7 @@ This is main extension which gives us language server.
 ```json
 // Follow redirection operators with a space (more readable)
 "bashIde.shfmt.spaceRedirects": true,
-// Increase number of files to analize (analize them all to not miss any reference to show)
+// Increase number of files to analyze (analyze them all to not miss any reference to show)
 "bashIde.backgroundAnalysisMaxFiles": 9999,
 // Decrease logging level
 "bashIde.logLevel": "warning",
@@ -80,7 +80,7 @@ This extension will autocomplete relative paths to scripts when you entering the
 ### 3.4. [ShellCheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 
 This extension will lint all the problems in your code.
-This can be also done with `Bash IDE` extension, but when I used it, it was not working properly - in my case some shell variable was declared as not declared, but it was - in anohter file, and sourced. With the `ShellCheck` extension this problem does not replicate.
+This can be also done with `Bash IDE` extension, but when I used it, it was not working properly - in my case some shell variable was declared as not declared, but it was - in another file, and sourced. With the `ShellCheck` extension this problem does not replicate.
 
 ```json
 // Decrease logging level
@@ -307,7 +307,8 @@ For that reason, I also installed:
 - [Apache Conf](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-apache) - For Apache web server configurations;
 - [nginx.conf hint](https://marketplace.visualstudio.com/items?itemName=hangxingliu.vscode-nginx-conf-hint) - For Nginx web server configurations;
 - [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) - For Lua language (used by some Linux windows managers);
-- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) - For CSV and TSV files.
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) - For CSV and TSV files;
+- [hunspell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.hunspell) - For `.aff` and `.dic` dictionary files.
 
 ### 3.5. Fancy
 
