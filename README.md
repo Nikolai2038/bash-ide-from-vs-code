@@ -285,6 +285,8 @@ Extra git settings I use:
     "todo-tree.tree.flat": true,
     ```
 
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - Check spelling in code. This one is for English. You can install extensions `... - Code Spell Checker` for other languages too.
+
 ### 3.4. Syntax highlight for some configs
 
 Since I use created Bash profile as default when opening folders on Linux, it is quite useful to have it configured to highlight syntax in several config files - Nginx, Apache, Vim, etc.
@@ -298,7 +300,8 @@ For that reason, I also installed:
 - [Systemd Helper](https://marketplace.visualstudio.com/items?itemName=hangxingliu.vscode-systemd-support) - For SystemD unit files configurations;
 - [Apache Conf](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-apache) - For Apache web server configurations;
 - [nginx.conf hint](https://marketplace.visualstudio.com/items?itemName=hangxingliu.vscode-nginx-conf-hint) - For Nginx web server configurations;
-- [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) - For Lua language (used by some Linux windows managers).
+- [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) - For Lua language (used by some Linux windows managers);
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) - For CSV and TSV files.
 
 ### 3.5. Fancy
 
