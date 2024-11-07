@@ -27,8 +27,6 @@ If some settings are not provided, that means I left them with default.
 
 Also, if you have suggestions and advices, feel free to add them via [issues](https://github.com/Nikolai2038/bash-ide-from-vs-code/issues) or [pull requests](https://github.com/Nikolai2038/bash-ide-from-vs-code/pulls)!
 
-You can also skip all the instructions below - just install all the references extensions and merge content of `settings.json` into your VS Code settings.
-
 ### 3.1. [Bash IDE](https://marketplace.visualstudio.com/items?itemName=mads-hartmann.bash-ide-vscode)
 
 This is main extension which gives us language server.
@@ -73,7 +71,7 @@ sudo chmod +x /usr/bin/rename_or_move_shell_script
 On how the script works - you can check by yourself.
 If you found a bug or have a suggestion on how to optimize it, you will be the awesome man to let me know something that will make it better!
 
-### 3.3. [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+### 3.3. [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)
 
 This extension will autocomplete relative paths to scripts when you entering them in `source`, `find`, etc.
 
@@ -124,6 +122,15 @@ I use English:
 "typelens.noreferences": "No references found",
 "typelens.plural": "{0} references",
 "typelens.singular": "{0} reference",
+```
+
+Other customizations:
+
+```json
+// Do not include function itself in it's usages
+"typelens.excludeself": true,
+// Do not grey out unused functions
+"typelens.unusedcolor": "",
 ```
 
 ### 3.7. [Shell Script Command Completion](https://marketplace.visualstudio.com/items?itemName=tetradresearch.vscode-h2o)
