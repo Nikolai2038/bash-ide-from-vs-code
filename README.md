@@ -60,7 +60,7 @@ We use it to update all links to the file and from the file to other files.
 ],
 ```
 
-I wrote the script `rename_or_move_shell_script.sh` do do all the renames and put it in this repository.
+I wrote the script `rename_or_move_shell_script.sh` which will do all the renames, and put it in this repository.
 You can install it by running:
 
 ```sh
@@ -69,6 +69,8 @@ sudo chmod +x /usr/bin/rename_or_move_shell_script
 ```
 
 On how the script works - you can check by yourself.
+It replaces links in `source` commands both in moved file and in files, where moved file is referenced.
+Also, this script sorts `source` commands in the file.
 If you found a bug or have a suggestion on how to optimize it, you will be the awesome man to let me know something that will make it better!
 
 ### 3.3. [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)
@@ -153,13 +155,7 @@ Useful shell snippets.
 
 More snippets.
 
-### 3.11. [Sort lines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines)
-
-Useful to sort `source` commands.
-
-TODO: This can be implemented automatically with script in `File Watcher` extension.
-
-### 3.12. [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+### 3.11. [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 
 To show error messages inline. I disable showing errors for all lines except current - found that more useful (otherwise, for example, after some missed quotation mark, errors will fill all the lines to the end of the file):
 
@@ -167,9 +163,9 @@ To show error messages inline. I disable showing errors for all lines except cur
 "errorLens.followCursor": "activeLine",
 ```
 
-## 3. (Optional) Install and configure extra extensions
+## 4. (Optional) Install and configure extra extensions
 
-### 3.1. GIT
+### 4.1. GIT
 
 - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) - It will bring more views to play with. I don't use paid version. For git log use `Git Graph` extension below. Config:
 
@@ -215,12 +211,12 @@ Extra git settings I use:
 "git.replaceTagsWhenPull": true,
 ```
 
-### 3.2. Markdown
+### 4.2. Markdown
 
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - Autocompletion;
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - Lint syntax errors in your Markdown file.
 
-### 3.3. Useful
+### 4.3. Useful
 
 - [Format in context menus](https://marketplace.visualstudio.com/items?itemName=lacroixdavid1.vscode-format-context-menu) - To right click folder and format all files in it! For the first launch, I recommend disabling format on save, because it will double the commands executing;
 - [Open Folder Context Menus for VS Code](https://marketplace.visualstudio.com/items?itemName=chrisdias.vscode-opennewinstance);
@@ -300,7 +296,7 @@ Extra git settings I use:
 
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - Check spelling in code. This one is for English. You can install extensions `... - Code Spell Checker` for other languages too.
 
-### 3.4. Syntax highlight for some configs
+### 4.4. Syntax highlight for some configs
 
 Since I use created Bash profile as default when opening folders on Linux, it is quite useful to have it configured to highlight syntax in several config files - Nginx, Apache, Vim, etc.
 For that reason, I also installed:
@@ -317,7 +313,7 @@ For that reason, I also installed:
 - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) - For CSV and TSV files;
 - [hunspell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.hunspell) - For `.aff` and `.dic` dictionary files.
 
-### 3.5. Fancy
+### 4.5. Fancy
 
 - [Coloured Status Bar Problems](https://marketplace.visualstudio.com/items?itemName=bradzacher.vscode-coloured-status-bar-problems) - Add colors to icons in statusbar when there are more than 0 warnings/errors;
 - [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - Highlight wrong indentation:
@@ -343,7 +339,7 @@ For that reason, I also installed:
 
 - [Unfancy file icons](https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons) - Icons pack I use.
 
-### 3.6. Remote
+### 4.6. Remote
 
 - [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer);
 - [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh);
