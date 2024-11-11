@@ -9,65 +9,8 @@ escape_sed() {
   return 0
 }
 
-# Sort sources in the specified file
-sort_sources() {
-  local file_path="${1}" && { shift || true; }
-
-  # File content
-  local file_content
-  file_content="$(cat "${file_path}")" || return "$?"
-
-  # Lines of the file content
-  declare -a file_lines
-  # Make sure to add empty line, so the "for" cycle will check all source blocks
-  mapfile -t file_lines <<< "${file_content}
-" || return "$?"
-
-  # New file content - with sorted "source" blocks
-  local new_file_content
-
-  local was_source=0
-  local sources_to_sort=""
-
-  local line
-  for line in "${file_lines[@]}"; do
-    if [[ ! ${line} =~ ^source[[:blank:]] ]]; then
-      if ((was_source)); then
-        # Sort and remove empty line at the end
-        sources_to_sort="$(echo -n "${sources_to_sort}" | sort | grep -v '^$')" || return "$?"
-        if [ -n "${new_file_content}" ]; then
-          new_file_content+="
-" || return "$?"
-        fi
-        new_file_content+="${sources_to_sort}" || return "$?"
-      fi
-
-      was_source=0
-      sources_to_sort=""
-      if [ -n "${new_file_content}" ]; then
-        new_file_content+="
-" || return "$?"
-      fi
-      new_file_content+="${line}" || return "$?"
-    else
-      was_source=1
-      if [ -n "${sources_to_sort}" ]; then
-        sources_to_sort+="
-" || return "$?"
-      fi
-      sources_to_sort+="${line}" || return "$?"
-    fi
-  done
-
-  # Remove one empty line at the end because we added it when converting to array
-  # shellcheck disable=SC2320
-  echo -n "${new_file_content}" > "${file_path}" || return "$?"
-
-  return 0
-}
-
 # Update references in sources when file was moved
-rename_or_move_shell_script() {
+bash_ide_from_vs_code_update_sources() {
   local workspace_full_path="${1}" && { shift || true; }
   local file_full_path_old="${1}" && { shift || true; }
   local file_full_path_new="${1}" && { shift || true; }
@@ -103,7 +46,7 @@ rename_or_move_shell_script() {
     sed -Ei "s#$(escape_sed "${relative_file_path_old}")#$(escape_sed "${relative_file_path_new}")#g" "${shell_script_in_workspace}" || return "$?"
 
     # Sort sources in referenced file
-    sort_sources "${shell_script_in_workspace}" || return "$?"
+    bash_ide_from_vs_code_sort_sources "${shell_script_in_workspace}" || return "$?"
   done
   # ========================================
 
@@ -172,9 +115,9 @@ rename_or_move_shell_script() {
   # ========================================
 
   # Sort sources in moved file
-  sort_sources "${file_full_path_new}" || return "$?"
+  bash_ide_from_vs_code_bash_ide_from_vs_code_sort_sources "${file_full_path_new}" || return "$?"
 
   return 0
 }
 
-rename_or_move_shell_script "${@}" || exit "$?"
+bash_ide_from_vs_code_update_sources "${@}" || exit "$?"

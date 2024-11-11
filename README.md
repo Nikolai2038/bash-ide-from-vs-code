@@ -55,22 +55,32 @@ We use it to update all links to the file and from the file to other files.
     {
         "event": "onFileRename",
         "match": ".*\\.sh",
-        "cmd": "/usr/bin/rename_or_move_shell_script \"${workspaceRoot}\" \"${fileOld}\" \"${file}\""
+        "cmd": "/usr/bin/bash_ide_from_vs_code_update_sources \"${workspaceRoot}\" \"${fileOld}\" \"${file}\""
+    },
+    {
+        "event": "onFileChange",
+        "match": ".*\\.sh",
+        "cmd": "/usr/bin/bash_ide_from_vs_code_sort_sources \"${file}\""
     }
 ],
 ```
 
-I wrote the script `rename_or_move_shell_script.sh` which will do all the renames, and put it in this repository.
-You can install it by running:
+I wrote scripts, which will do all the renames, and put them in this repository.
+You can install them by running:
 
 ```sh
-sudo wget -O /usr/bin/rename_or_move_shell_script https://raw.githubusercontent.com/Nikolai2038/bash-ide-from-vs-code/refs/heads/main/rename_or_move_shell_script.sh && \
-sudo chmod +x /usr/bin/rename_or_move_shell_script
+sudo wget -O /usr/bin/bash_ide_from_vs_code_update_sources https://raw.githubusercontent.com/Nikolai2038/bash-ide-from-vs-code/refs/heads/main/bash_ide_from_vs_code_update_sources.sh && \
+sudo chmod +x /usr/bin/bash_ide_from_vs_code_update_sources && \
+sudo wget -O /usr/bin/bash_ide_from_vs_code_sort_sources https://raw.githubusercontent.com/Nikolai2038/bash-ide-from-vs-code/refs/heads/main/bash_ide_from_vs_code_sort_sources.sh && \
+sudo chmod +x /usr/bin/bash_ide_from_vs_code_sort_sources
 ```
 
-On how the script works - you can check by yourself.
-It replaces links in `source` commands both in moved file and in files, where moved file is referenced.
-Also, this script sorts `source` commands in the file.
+On how the scripts works - you can check by yourself.
+They:
+
+- Replace links in `source` commands both in moved file and in files, where moved file is referenced;
+- Sort `source` commands in changed files.
+
 If you found a bug or have a suggestion on how to optimize it, you will be the awesome man to let me know something that will make it better!
 
 ### 3.3. [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)
